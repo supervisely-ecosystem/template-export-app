@@ -1,0 +1,13 @@
+{
+  "name": "Custom Export app",
+  "description": "Demonstrates how to make custom export supervisely app",
+  "categories": ["development"],
+  "main_script": "src/main.py",
+  "headless": true,
+  "icon": "",
+  "poster": "",
+  "context_menu": {
+    "context_category": "Export",
+    "target": ["images_project", "images_dataset"]
+  }
+}
