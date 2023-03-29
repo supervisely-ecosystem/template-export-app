@@ -69,7 +69,7 @@ The advanced debugging option is somewhat identical, however it will upload resu
 
 ## Step 3. What custom export app do
 
-Custom export app converts selected project to the following format and prepares downloadable .tar archive:
+Custom export app converts selected images project or dataset to the following format and prepares downloadable .tar archive:
 
 - original images
 - annotations in json format
