@@ -1,6 +1,5 @@
 import os, json
 import supervisely as sly
-from os.path import join
 
 from dotenv import load_dotenv
 
@@ -22,7 +21,7 @@ class MyExport(sly.app.Export):
         project_info = api.project.get_info_by_id(id=context.project_id)
 
         # make project directory path
-        data_dir = join(STORAGE_DIR, f"{project_info.id}_{project_info.name}")
+        data_dir = os.path.join(STORAGE_DIR, f"{project_info.id}_{project_info.name}")
 
         # get project meta
         meta_json = api.project.get_meta(id=context.project_id)
@@ -49,7 +48,7 @@ class MyExport(sly.app.Export):
                 labels = []
 
                 # create path for each image and download it from server
-                image_path = join(data_dir, dataset.name, image.name)
+                image_path = os.path.join(data_dir, dataset.name, image.name)
                 api.image.download(image.id, image_path)
 
                 # download annotation for current image
@@ -81,7 +80,7 @@ class MyExport(sly.app.Export):
                 ds_progress.iter_done_report()
 
             # create JSON annotation in new format
-            filename = join(data_dir, dataset.name, ANN_FILE_NAME)
+            filename = os.path.join(data_dir, dataset.name, ANN_FILE_NAME)
             with open(filename, "w") as file:
                 json.dump(result_anns, file, indent=2)
 
