@@ -1,8 +1,8 @@
 # template-export-app
 
-Template app that demonstrates how to make export apps.
+Example app that demonstrates how to make export apps.
 
-Custom export app converts selected images project or dataset to the following format and prepares downloadable .tar archive:
+In this example export app converts selected images project or dataset to the following format and prepares downloadable .tar archive:
 
 - original images
 - annotations in json format
